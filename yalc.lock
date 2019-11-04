@@ -1,0 +1,45 @@
+{
+  "version": "v1",
+  "packages": {
+    "@westpac/core": {
+      "signature": "d2860e83151f3be52e8878c808949d16",
+      "file": true
+    },
+    "@westpac/wbc": {
+      "signature": "42253ab7c0923c47ed348247b08d290d",
+      "file": true
+    },
+    "@westpac/button": {
+      "signature": "f864524ae04e254407bd61c03e6c1f8c",
+      "file": true
+    },
+    "@westpac/a11y": {
+      "signature": "3d4496e899eee7203fcf9bf0706e6f25",
+      "file": true
+    },
+    "@westpac/grid": {
+      "signature": "15543e7e9de709cd6883ad0392f24e01",
+      "file": true
+    },
+    "@westpac/text-input": {
+      "signature": "3d46e6f2e33bdc6f785e883ae8948ccd",
+      "file": true
+    },
+    "@westpac/form": {
+      "signature": "3ab7dbb8a53cc250bd403f74916bff14",
+      "file": true
+    },
+    "@westpac/icon": {
+      "signature": "29b20a326b6f7295ab649df4cab8bb08",
+      "file": true
+    },
+    "@westpac/form-check": {
+      "signature": "0c6ec5cf8dc786609579389f229afc71",
+      "file": true
+    },
+    "@westpac/modal": {
+      "signature": "fb6e0806bb70e3c093f0605e4e3b2928",
+      "file": true
+    }
+  }
+}

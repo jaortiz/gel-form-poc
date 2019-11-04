@@ -3,6 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@westpac/a11y": "file:.yalc/@westpac/a11y",
+    "@westpac/button": "file:.yalc/@westpac/button",
+    "@westpac/core": "file:.yalc/@westpac/core",
+    "@westpac/form": "file:.yalc/@westpac/form",
+    "@westpac/form-check": "file:.yalc/@westpac/form-check",
+    "@westpac/grid": "file:.yalc/@westpac/grid",
+    "@westpac/icon": "file:.yalc/@westpac/icon",
+    "@westpac/modal": "file:.yalc/@westpac/modal",
+    "@westpac/text-input": "file:.yalc/@westpac/text-input",
+    "@westpac/wbc": "file:.yalc/@westpac/wbc",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-scripts": "3.2.0"
