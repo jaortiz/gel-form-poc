@@ -2,7 +2,7 @@
   "version": "v1",
   "packages": {
     "@westpac/core": {
-      "signature": "d2860e83151f3be52e8878c808949d16",
+      "signature": "858b4b87548438a504f41e57d9ebdf67",
       "file": true
     },
     "@westpac/wbc": {
@@ -38,7 +38,11 @@
       "file": true
     },
     "@westpac/modal": {
-      "signature": "fb6e0806bb70e3c093f0605e4e3b2928",
+      "signature": "f0c511e35405d442b9dcd4732275c997",
+      "file": true
+    },
+    "@westpac/stg": {
+      "signature": "a45033390e1307e1a538760321cc2ed0",
       "file": true
     }
   }

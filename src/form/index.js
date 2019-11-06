@@ -1,1 +1,1 @@
-export { formReducer, initialState } from "./form-reducer";
+export { Form } from "./Form";

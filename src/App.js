@@ -1,112 +1,113 @@
 /** @jsx jsx */
 
-import { useReducer } from "react";
-import wbcBrand from "@westpac/wbc";
+import { useState } from "react";
 import { GEL, jsx } from "@westpac/core";
+import wbcBrand from "@westpac/wbc";
+import stgBrand from "@westpac/stg";
 import { Container, Cell, Grid } from "@westpac/grid";
-import {
-  FormSection,
-  FormGroup,
-  FormLabel,
-  Hint,
-  ErrorMessage
-} from "@westpac/form";
-import { Text, Textarea } from "@westpac/text-input";
-import { Button, ButtonGroup } from "@westpac/button";
-import { FormCheck, Option } from "@westpac/form-check";
-import { Modal, Header, Footer } from "@westpac/modal";
-import { initialState, formReducer } from "./form";
+import { Button } from "@westpac/button";
+import { Modal, Header, Body, Footer } from "@westpac/modal";
+import { Form } from "./form";
+import { useFormData } from "./data";
 
-const inputMap = (inputType, inputName, options = []) => {
-  switch (inputType) {
-    case "text":
-      return <Text name={inputName} />;
-    case "textarea":
-      return <Textarea name={inputName} />;
-    case "buttonGroup":
-      return (
-        <ButtonGroup name={inputName}>
-          {options.map(option => (
-            <Button>{option}</Button>
-          ))}
-        </ButtonGroup>
-      );
-    case "radio":
-      return (
-        <FormCheck name={inputName}>
-          {options.map(option => (
-            <Option value={option}>{option}</Option>
-          ))}
-        </FormCheck>
-      );
-    default:
-      throw new Error("input type undefined, something went really wrong!!");
-  }
-};
+const Wrapper = ({ children, props }) => (
+  <Container>
+    <Grid columns={3}>
+      <Cell left={2}>{children}</Cell>
+    </Grid>
+  </Container>
+);
 
-function App() {
-  const [state, dispatch] = useReducer(formReducer, initialState);
-
-  const form = state.form.fields.map(field => {
-    return (
-      <FormGroup>
-        <FormLabel htmlFor={field.name}>{field.label}</FormLabel>
-        {field.hint && <Hint>{field.hint}</Hint>}
-        {field.error && <ErrorMessage message={field.error} />}
-        {inputMap(field.inputType, field.name, field.options)}
-      </FormGroup>
-    );
-  });
+const ModalWrapper = ({ header, submit, children, props }) => {
+  const [open, setOpen] = useState(true);
 
   return (
-    <GEL brand={wbcBrand}>
-      <div css={{ height: "4rem" }} />
-      <Container>
-        <Grid columns={3}>
-          <Cell>
-            <div
-              css={{
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-evenly",
-                height: "100%",
-                width: 130
-              }}
-            >
-              <Button onClick={() => dispatch({ type: "FORM_ONE" })}>
-                Form One
-              </Button>
-              <Button onClick={() => dispatch({ type: "FORM_TWO" })}>
-                Form Two
-              </Button>
-              <Button onClick={() => dispatch({ type: "FORM_THREE" })}>
-                Form Three
-              </Button>
-            </div>
-          </Cell>
-          <Cell left={2}>
-            <p css={{ textAlign: "center" }}>
-              Westpac welcomes any feedback you might have regarding how we make
-              products and services accessible for customers with disability.
-              Whether you want to share a complaint, a compliment or a
-              suggestion to help us do things better, we’d like to hear from
-              you. Your feedback will give us the opportunity to put things
-              right.
-            </p>
-            <p css={{ textAlign: "center" }}>
-              <strong>Please complete all fields below</strong>
-            </p>
-          </Cell>
-          <Cell left={2} top={2}>
-            <FormSection>
-              {form}
-              <Button onClick={() => alert(state.form.submit)}>Submit</Button>
-            </FormSection>
-          </Cell>
-        </Grid>
-      </Container>
+    <Modal open={open}>
+      <Header>{header}</Header>
+      <Body>{children}</Body>
+      <Footer>
+        <Button onClick={() => setOpen(!open)}>{submit.text}</Button>
+      </Footer>
+    </Modal>
+  );
+};
+
+const brandMap = {
+  wbc: wbcBrand,
+  stg: stgBrand
+};
+
+const getBrand = brand => {
+  if (brand.includes("stgeorge")) {
+    return brandMap.stg;
+  }
+
+  return brandMap.wbc;
+};
+
+const StyledButton = props => <Button css={{ margin: 8 }} {...props} />;
+
+function App() {
+  const [state, dispatch] = useFormData();
+  const data = state.form;
+
+  // maybe have a test version later that uses the reducer instead of the data from an api
+  const brand = getBrand(window.location.href);
+
+  return (
+    <GEL brand={brand}>
+      {/* <div
+        css={{
+          position: "fixed",
+          top: 0,
+          left: 0,
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "space-evenly",
+          width: 130
+        }}
+      >
+        <StyledButton onClick={() => dispatch({ type: "FORM_ONE" })}>
+          Form One
+        </StyledButton>
+        <StyledButton onClick={() => dispatch({ type: "FORM_TWO" })}>
+          Form Two
+        </StyledButton>
+        <StyledButton onClick={() => dispatch({ type: "FORM_THREE" })}>
+          Form Three
+        </StyledButton>
+        <StyledButton onClick={() => dispatch({ type: "FORM_FOUR" })}>
+          Form Four
+        </StyledButton>
+      </div> */}
+
+      {data.modal ? (
+        <ModalWrapper header={data.modal.header} submit={data.submit}>
+          <Form data={data} />
+        </ModalWrapper>
+      ) : (
+        <Wrapper>
+          <Form data={data} />
+        </Wrapper>
+      )}
     </GEL>
   );
 }
 
 export default App;
+
+/* <div
+        css={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "space-evenly",
+          height: "100%",
+          width: 130
+        }}
+      >
+        <Button onClick={() => dispatch({ type: "FORM_ONE" })}>Form One</Button>
+        <Button onClick={() => dispatch({ type: "FORM_TWO" })}>Form Two</Button>
+        <Button onClick={() => dispatch({ type: "FORM_THREE" })}>
+          Form Three
+        </Button>
+      </div> */
