@@ -1,6 +1,6 @@
 /** @jsx jsx */
 
-import { Fragment } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { jsx } from "@westpac/core";
 import {
   FormSection,
@@ -55,6 +55,23 @@ const createGroup = group => (
 );
 
 export const Form = ({ data }) => {
+  const [header, setHeader] = useState();
+  useEffect(() => {
+    async function fetchHeader() {
+      const res = await fetch(
+        "https://www.westpac.com.au/content/public/wbc/en/_services/serialiser/test.serialise.json",
+        { mode: "cors" }
+      );
+
+      res
+        .json()
+        .then(res => setHeader(res.form.Header.Text))
+        .catch(err => console.log(err));
+    }
+
+    fetchHeader();
+  }, []);
+
   const form = data.sections.map(section => (
     <FormSection noPadding>
       {section.groups.map(group => (
@@ -66,7 +83,9 @@ export const Form = ({ data }) => {
 
   return (
     <Fragment>
-      {formHeader(data)}
+      {/* {formHeader(data)} */}
+      {header && <p>{header}</p>}
+      <h4>About me</h4>
       {form}
     </Fragment>
   );
