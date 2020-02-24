@@ -56,28 +56,30 @@ const createGroup = group => (
 
 export const Form = ({ data }) => {
   const [header, setHeader] = useState();
-  useEffect(() => {
-    async function fetchHeader() {
-      const res = await fetch(
-        "https://www.westpac.com.au/content/public/wbc/en/_services/serialiser/test.serialise.json",
-        { mode: "cors" }
-      );
+  // useEffect(() => {
+  //   async function fetchHeader() {
+  //     const res = await fetch(
+  //       "https://www.westpac.com.au/content/public/wbc/en/_services/serialiser/test.serialise.json",
+  //       { mode: "cors" }
+  //     );
 
-      res
-        .json()
-        .then(res => setHeader(res.form.Header.Text))
-        .catch(err => console.log(err));
-    }
+  //     res
+  //       .json()
+  //       .then(res => setHeader(res.form.Header.Text))
+  //       .catch(err => console.log(err));
+  //   }
 
-    fetchHeader();
-  }, []);
+  //   fetchHeader();
+  // }, []);
 
   const form = data.sections.map(section => (
     <FormSection noPadding>
       {section.groups.map(group => (
         <FormGroup>{createGroup(group)}</FormGroup>
       ))}
-      {!data.modal && <Button>{data.submit.text}</Button>}
+      {!data.modal && (
+        <Button onClick={() => alert("Submitted")}>{data.submit.text}</Button>
+      )}
     </FormSection>
   ));
 
@@ -85,7 +87,7 @@ export const Form = ({ data }) => {
     <Fragment>
       {/* {formHeader(data)} */}
       {header && <p>{header}</p>}
-      <h4>About me</h4>
+      {/* <h4>About me</h4> */}
       {form}
     </Fragment>
   );

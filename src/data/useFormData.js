@@ -2,7 +2,7 @@ import { useReducer } from "react";
 
 import { formOne, formTwo, formThree, formFour } from "./form-data";
 const initialState = {
-  form: formOne
+  form: formFour
 };
 
 const formReducer = (state, action) => {

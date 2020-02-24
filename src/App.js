@@ -11,7 +11,7 @@ import { Form } from "./form";
 import { useFormData } from "./data";
 
 const Wrapper = ({ children, props }) => (
-  <Container>
+  <Container css={{ marginTop: "4rem" }}>
     <Grid columns={3}>
       <Cell left={2}>{children}</Cell>
     </Grid>
@@ -79,7 +79,7 @@ function App() {
         <StyledButton onClick={() => dispatch({ type: "FORM_FOUR" })}>
           Form Four
         </StyledButton>
-      </div> */}
+      </div>
 
       {data.modal ? (
         <ModalWrapper header={data.modal.header} submit={data.submit}>
@@ -89,7 +89,10 @@ function App() {
         <Wrapper>
           <Form data={data} />
         </Wrapper>
-      )}
+      )} */}
+      <Wrapper>
+        <Form data={data} />
+      </Wrapper>
     </GEL>
   );
 }
