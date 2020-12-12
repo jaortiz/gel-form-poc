@@ -1559,15 +1559,15 @@
   version "0.0.1-3d4496e8"
   dependencies:
     "@babel/runtime" "^7.6.2"
-    "@westpac/core" "file:../../../Library/Caches/Yarn/v4/npm-@westpac-a11y-0.0.1-3d4496e8-23a632c6-a9e0-4caa-aec1-4ab89802bcf6-1573041244914/node_modules/@westpac/core"
+    "@westpac/core" "file:.yalc/@westpac/core"
     prop-types "^15.7.2"
 
 "@westpac/button@file:.yalc/@westpac/button":
   version "0.0.1-f864524a"
   dependencies:
     "@babel/runtime" "^7.6.2"
-    "@westpac/a11y" "file:../../../Library/Caches/Yarn/v4/npm-@westpac-button-0.0.1-f864524a-6b9e0d17-47f6-46b5-ad7e-6a11cce0f394-1573041244954/node_modules/@westpac/a11y"
-    "@westpac/core" "file:../../../Library/Caches/Yarn/v4/npm-@westpac-button-0.0.1-f864524a-6b9e0d17-47f6-46b5-ad7e-6a11cce0f394-1573041244954/node_modules/@westpac/core"
+    "@westpac/a11y" "file:.yalc/@westpac/a11y"
+    "@westpac/core" "file:.yalc/@westpac/core"
     prop-types "^15.7.2"
 
 "@westpac/core@file:.yalc/@westpac/core":
@@ -1585,7 +1585,7 @@
   version "0.0.1-0c6ec5cf"
   dependencies:
     "@babel/runtime" "^7.6.2"
-    "@westpac/core" "file:../../../Library/Caches/Yarn/v4/npm-@westpac-form-check-0.0.1-0c6ec5cf-b9578676-864e-4c7e-9f69-fc05e10308a8-1573041244974/node_modules/@westpac/core"
+    "@westpac/core" "file:.yalc/@westpac/core"
     prop-types "^15.7.2"
     shortid "^2.2.15"
 
@@ -1593,9 +1593,9 @@
   version "0.0.1-3ab7dbb8"
   dependencies:
     "@babel/runtime" "^7.6.2"
-    "@westpac/a11y" "file:../../../Library/Caches/Yarn/v4/npm-@westpac-form-0.0.1-3ab7dbb8-b0fc4fee-03bf-4ddb-9a51-caaac7ac8972-1573041244962/node_modules/@westpac/a11y"
-    "@westpac/core" "file:../../../Library/Caches/Yarn/v4/npm-@westpac-form-0.0.1-3ab7dbb8-b0fc4fee-03bf-4ddb-9a51-caaac7ac8972-1573041244962/node_modules/@westpac/core"
-    "@westpac/icon" "file:../../../Library/Caches/Yarn/v4/npm-@westpac-form-0.0.1-3ab7dbb8-b0fc4fee-03bf-4ddb-9a51-caaac7ac8972-1573041244962/node_modules/@westpac/icon"
+    "@westpac/a11y" "file:.yalc/@westpac/a11y"
+    "@westpac/core" "file:.yalc/@westpac/core"
+    "@westpac/icon" "file:.yalc/@westpac/icon"
     prop-types "^15.7.2"
     shortid "^2.2.15"
 
@@ -1603,23 +1603,23 @@
   version "0.0.1-15543e7e"
   dependencies:
     "@babel/runtime" "^7.6.2"
-    "@westpac/core" "file:../../../Library/Caches/Yarn/v4/npm-@westpac-grid-0.0.1-15543e7e-b2f8176e-4ab3-45e9-bffe-ae095eff71c2-1573041244979/node_modules/@westpac/core"
+    "@westpac/core" "file:.yalc/@westpac/core"
     prop-types "^15.7.2"
 
 "@westpac/icon@file:.yalc/@westpac/icon":
   version "0.0.1-29b20a32"
   dependencies:
     "@babel/runtime" "^7.6.2"
-    "@westpac/core" "file:../../../Library/Caches/Yarn/v4/npm-@westpac-icon-0.0.1-29b20a32-57593136-2c96-428b-b732-f03050e7ed0d-1573041244968/node_modules/@westpac/core"
+    "@westpac/core" "file:.yalc/@westpac/core"
     prop-types "^15.7.2"
 
 "@westpac/modal@file:.yalc/@westpac/modal":
   version "0.0.1-f0c511e3"
   dependencies:
     "@babel/runtime" "^7.6.2"
-    "@westpac/button" "file:../../../Library/Caches/Yarn/v4/npm-@westpac-modal-0.0.1-f0c511e3-953f927f-743f-4205-bdfe-9fd470aa8c95-1573041244983/node_modules/@westpac/button"
-    "@westpac/core" "file:../../../Library/Caches/Yarn/v4/npm-@westpac-modal-0.0.1-f0c511e3-953f927f-743f-4205-bdfe-9fd470aa8c95-1573041244983/node_modules/@westpac/core"
-    "@westpac/icon" "file:../../../Library/Caches/Yarn/v4/npm-@westpac-modal-0.0.1-f0c511e3-953f927f-743f-4205-bdfe-9fd470aa8c95-1573041244983/node_modules/@westpac/icon"
+    "@westpac/button" "file:.yalc/@westpac/button"
+    "@westpac/core" "file:.yalc/@westpac/core"
+    "@westpac/icon" "file:.yalc/@westpac/icon"
     prop-types "^15.7.2"
     react-focus-lock "^2.2.1"
     react-transition-group "^4.3.0"
@@ -1632,7 +1632,7 @@
   version "0.0.1-3d46e6f2"
   dependencies:
     "@babel/runtime" "^7.6.2"
-    "@westpac/core" "file:../../../Library/Caches/Yarn/v4/npm-@westpac-text-input-0.0.1-3d46e6f2-2a141654-3384-467a-a52b-c04571a12ee0-1573041244995/node_modules/@westpac/core"
+    "@westpac/core" "file:.yalc/@westpac/core"
     mini-svg-data-uri "^1.1.3"
     prop-types "^15.7.2"
 
@@ -4997,9 +4997,9 @@ inherits@2.0.3:
   integrity sha1-Yzwsg+PaQqUC9SRmAiSA9CCCYd4=
 
 ini@^1.3.5, ini@~1.3.0:
-  version "1.3.5"
-  resolved "https://registry.yarnpkg.com/ini/-/ini-1.3.5.tgz#eee25f56db1c9ec6085e0c22778083f596abf927"
-  integrity sha512-RZY5huIKCMRWDUqZlEi72f/lmXKMvuszcMBduliQ3nnWbx9X/ZBQO7DijMEYS9EhHBb2qacRUMtC7svLwe0lcw==
+  version "1.3.8"
+  resolved "https://registry.yarnpkg.com/ini/-/ini-1.3.8.tgz#a29da425b48806f34767a4efce397269af28432c"
+  integrity sha512-JV/yugV2uzW5iMRSiZAyDtQd+nxtUnjeLt0acNdw98kKLrvuRVyB80tsREOE7yvGVgalhZ6RNXCmEHkUKBKxew==
 
 inquirer@6.5.0:
   version "6.5.0"
